@@ -16,14 +16,14 @@ from src.kpi_calculations import (
 
 # ── Page Config ──────────────────────────────────────────────────────────────
 st.set_page_config(page_title="EduPro Learner Analytics", layout="wide")
-st.title("📚 EduPro Learner Analytics Dashboard")
+st.title("EduPro Learner Analytics Dashboard")
 st.markdown("Understand *who* your learners are and *what* they enroll in.")
 
 
 # ── Load Data ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load():
-    return load_clean_data("data/processed/edupro_clean_data.csv")
+    return load_clean_data(r"C:\Users\anany\OneDrive\Desktop\Ananya\projects\learner_analytics\data\processed\edupro_clean_data.csv")
 
 df = load()
 
@@ -54,7 +54,7 @@ fdf = df[
 
 
 # ── KPI Cards ─────────────────────────────────────────────────────────────────
-st.subheader("📊 Key Performance Indicators")
+st.subheader("Key Performance Indicators")
 k1, k2, k3, k4, k5 = st.columns(5)
 k1.metric("Total Enrollments", total_enrollments(fdf))
 k2.metric("Top Age Group", top_age_group(fdf) if len(fdf) > 0 else "—")
@@ -66,7 +66,7 @@ st.divider()
 
 
 # ── Row 1: Demographics ───────────────────────────────────────────────────────
-st.subheader("👥 Learner Demographics")
+st.subheader("Learner Demographics")
 col1, col2 = st.columns(2)
 
 with col1:
@@ -89,7 +89,7 @@ st.divider()
 
 
 # ── Row 2: Course Popularity ──────────────────────────────────────────────────
-st.subheader("📈 Course Category & Level Popularity")
+st.subheader("Course Category & Level Popularity")
 col3, col4 = st.columns(2)
 
 with col3:
@@ -112,7 +112,7 @@ st.divider()
 
 
 # ── Row 3: Cross-Demographic Analysis ────────────────────────────────────────
-st.subheader("🔬 Demographics × Course Preference")
+st.subheader("Demographics × Course Preference")
 col5, col6 = st.columns(2)
 
 with col5:
