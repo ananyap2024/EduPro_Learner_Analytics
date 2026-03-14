@@ -28,6 +28,24 @@ BLUES_CMAP = "Blues"
 
 # ── Page Config ───────────────────────────────────────────────────────────────
 st.set_page_config(page_title="EduPro Learner Analytics", layout="wide")
+st.markdown("""
+    <style>
+        /* Multiselect tag background */
+        span[data-baseweb="tag"] {
+            background-color: #7FAF8A !important;
+        }
+
+        /* Multiselect tag text */
+        span[data-baseweb="tag"] span {
+            color: #FFFFFF !important;
+        }
+
+        /* X (close) button on tag */
+        span[data-baseweb="tag"] span[role="presentation"] {
+            color: #FFFFFF !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
 st.title("EduPro Learner Analytics Dashboard")
 st.markdown("Understand *who* your learners are and *what* they enroll in.")
 
