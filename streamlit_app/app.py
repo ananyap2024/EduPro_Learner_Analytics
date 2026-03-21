@@ -53,8 +53,9 @@ st.markdown("Understand *who* your learners are and *what* they enroll in.")
 # ── Load Data ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load():
-    return load_clean_data(r"C:\Users\anany\OneDrive\Desktop\Ananya\projects\um-learner_analytics\data\processed\edupro_clean_data.csv")
-
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(base_dir, "data", "processed", "edupro_clean_data.csv")
+    return load_clean_data(path)
 df = load()
 
 
